@@ -9,6 +9,7 @@ function applycolor(b_color,b2_color,a_color){
 
 document.getElementById('search_term').addEventListener('keyup',function(){
 	var searchField = $('#search_term').val();
+	console.log(searchField);
 	if(searchField == ''){
 		return;
 	}

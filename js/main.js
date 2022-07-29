@@ -8,27 +8,22 @@ function applycolor(b_color,b2_color,a_color){
 }
 
 document.getElementById('search_term').addEventListener('keyup',function(){
-	var searchField = $('#search_term').val();
-	console.log(searchField);
-	if(searchField == ''){
-		console.log("비어있다");
-		return false;
-	}
-	var regex = new RegExp(searchField, 'i');
-	var output = '';
-	
 	$('.result').removeClass('result');
-
-	output += '<tr class="result"><td style="text-align:center; background-color:#52525f;"><p>퀴즈 내용</p></td><td style="text-align:center; background-color:#005f6b;"><p>정답</p></td></tr>'
-	$.getJSON('quiz/data.json', function (data) {
-		$.each(data, function (key, val) {
-			if ((val.quiz.search(regex) != -1) || (val.answer.search(regex) != -1)) {
-				output += '<tr class="result"><td class="퀴즈"><p>' + val.quiz + '</p></td><td class="정답"><p>' + val.answer + '</p></td></tr>';
-			}
+	var searchField = $('#search_term').val();
+	if(searchField == ''){}
+	else{
+		var regex = new RegExp(searchField, 'i');
+		var output = '';
+		output += '<tr class="result"><td style="text-align:center; background-color:#52525f;"><p>퀴즈 내용</p></td><td style="text-align:center; background-color:#005f6b;"><p>정답</p></td></tr>'
+		$.getJSON('quiz/data.json', function (data) {
+			$.each(data, function (key, val) {
+				if ((val.quiz.search(regex) != -1) || (val.answer.search(regex) != -1)) {
+					output += '<tr class="result"><td class="퀴즈"><p>' + val.quiz + '</p></td><td class="정답"><p>' + val.answer + '</p></td></tr>';
+				}
+			});
+		$('#search_results').html(output);
 		});
-	$('#search_results').html(output);
-	});
-
+	}
 });
 
 applycolor(back_color,base_color,ans_color);

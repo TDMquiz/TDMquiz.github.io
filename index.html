@@ -1,0 +1,55 @@
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>천애명월도M 퀴즈</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
+		<style>
+			body {
+				width:100%;
+				background-color: #001424;
+				line-height: 1;
+				font-size: 12px;
+			}
+			.quiz, .lead, label {
+				color: #fdf6e3;
+			}
+			p {
+				margin-top:5px;
+				margin-bottom:5px;
+				margin-left:10px;
+				margin-right:10px;
+			}
+			#result tr:not(.result) {
+				display:none;
+			}
+		</style>
+		</head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="quiz">천애명월도M 퀴즈</h1>
+			<form id="searchform">
+				<div class="form-group">
+					<label for="search_term"></label>
+					<input type="text" autocomplete="off" class="form-control" name="search_term" placeholder="퀴즈 문제를 입력해 주세요." id="search_term" />
+					<h6 style="color:white;">오타, 누락된 문제는 내용과 정답 공유 부탁드립니다.</h6>
+				</div>
+			</form>
+			<center>
+			<div id="result">
+				<table id="tb_result" style="color:white !important; width:100%; font-size:12px;" xmlns="http://www.w3.org/1999/xhtml" class="ta1 table-bordered" cellspacing="0" cellpadding="0" border="0">
+					<colgroup><col width="50%"><col width="50%"></colgroup>
+					<tbody id="search_results"></tbody>
+				</table>
+			</div>
+			</center>
+		</div>
+	</body>
+	<script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" type="text/javascript"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" type="text/javascript"></script>
+</html>

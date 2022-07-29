@@ -1,7 +1,6 @@
 var back_color="#001424";
 var base_color="#28a745";
 var ans_color="#eaf100";
-var search_text="";
 
 function applycolor(b_color,b2_color,a_color){
 	$("body").css("background-color",b_color);
@@ -9,12 +8,10 @@ function applycolor(b_color,b2_color,a_color){
 }
 
 document.getElementById('search_term').addEventListener('keyup',function(){
-	search_text=this.value;
-	if(this.value==''){
+	var searchField = $('#search_term').val();
+	if(searchField == ''){
 		return;
 	}
-	
-	var searchField = $('#search_term').val();
 	var regex = new RegExp(searchField, 'i');
 	var output = '';
 	

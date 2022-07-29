@@ -11,7 +11,8 @@ document.getElementById('search_term').addEventListener('keyup',function(){
 	var searchField = $('#search_term').val();
 	console.log(searchField);
 	if(searchField == ''){
-		return;
+		console.log("비어있다");
+		return false;
 	}
 	var regex = new RegExp(searchField, 'i');
 	var output = '';

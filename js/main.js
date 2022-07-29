@@ -27,12 +27,3 @@ document.getElementById('search_term').addEventListener('keyup',function(){
 });
 
 applycolor(back_color,base_color,ans_color);
-
-$('#search_term').keydown(function(e){
-	if(e.which==192){
-		var message=$("#search_term").val();
-		message=message.substr(0,message.length-1);
-		$("#search_term").val(message);
-		return false;
-	}
-});

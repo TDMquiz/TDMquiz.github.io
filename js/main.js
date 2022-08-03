@@ -18,6 +18,7 @@ document.getElementById('search_term').addEventListener('keyup',function(){
 		$.getJSON('quiz/data.json', function (data) {
 			$.each(data, function (key, val) {
 				if ((val.quiz.search(regex) != -1) || (val.answer.search(regex) != -1)) {
+					console.log(val);
 					output += '<tr class="result"><td class="퀴즈"><p>' + val.quiz + '</p></td><td class="정답"><p>' + val.answer + '</p></td></tr>';
 				}
 			});
